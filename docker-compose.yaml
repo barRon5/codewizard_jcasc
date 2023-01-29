@@ -1,0 +1,14 @@
+version: '3'
+services:
+  jenkins-casc:
+    build: .
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    volumes:
+      - jenkins_data:/var/jenkins_home
+    environment:
+      - JENKINS_ADMIN_ID=bar
+      - JENKINS_ADMIN_PASSWORD=123
+volumes:
+  jenkins_data:
